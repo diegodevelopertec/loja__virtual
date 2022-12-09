@@ -5,6 +5,7 @@ type Props={
     bgColorActive:boolean,
     mv:string,
     mh:string,
+    radiusState?:boolean
 }
 
 export const ContainerButtonMenu=styled.a<Props>`
@@ -14,9 +15,11 @@ export const ContainerButtonMenu=styled.a<Props>`
     align-items:center;
     border-radius:5px;
     padding:6px;
+    height: 60px;
+    width: 60px;
     text-decoration:none;
     margin: ${props=>props.mv && props.mh ? `${props.mv}px ${props.mh}px` : '10px 20'};
-    //background: ${props=>props.bgColor ? props.bgColor : '#485161'};
+   border-radius ${props=>props.radiusState === true ? '100%' : 'none'};
     background:${props=>props.bgColorActive === true ? '#485161' :  props.bgColor };
     &:hover{
         cursor:pointer;
@@ -25,8 +28,8 @@ export const ContainerButtonMenu=styled.a<Props>`
 `
 
 export const ButtonIcon=styled.img`
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     @media screen and (max-width:600px){
      height: 33px;
      width: 33px;

@@ -102,25 +102,28 @@ export const Showcase=()=>{
                  iconActive={displayBurguer ? true : false} src={LanchesIcon} 
                  marginhorizontal='10' marginvertical='10'  
                  onClick={actionDisplayBurguers}
-                
+                radius={true}
             />
             <ButtonMenu bg='#717b8f' 
                 iconActive={displayDrinks ? true : false} src={BebidasIcon} 
                 marginhorizontal='10' 
                 marginvertical='10'  
                 onClick={actionDisplayDrinks} 
+                radius={true}
             />
             <ButtonMenu bg='#717b8f' 
                 iconActive={displayPizzas ? true : false} src={PizzaIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 
                 onClick={actionDisplayPizzas} 
+                radius={true}
             />
               <ButtonMenu bg='#717b8f' 
                 iconActive={displayRestaurant} src={ResturantIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 
                 onClick={actionDisplayRestaurante} 
+                radius={true}
             />
            
         </div>
