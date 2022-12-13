@@ -68,10 +68,11 @@ const actionsModal={
                     <p>Você está adicionando {qdtProduct} {qdtProduct === 1 ? data.category.replace('s','') : data.category}</p>
                </div>
                <div className="cx-buttons">
-                    <button className='btn-cancel' onClick={funcOffModal}>cancelar</button>
+                    <button className='btn-cancel' onClick={funcOffModal}>voltar</button>
                     <button className='btn-save' onClick={onClick}>adicionar ao carrinho</button>
                </div>
             </div>
+
         </S.ContainerData>
     </S.Container>
 }

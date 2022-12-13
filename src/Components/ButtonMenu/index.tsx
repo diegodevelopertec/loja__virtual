@@ -10,12 +10,14 @@ type Prop={
     onClick?:()=>void;
     link?:string,
     text?:string,
-    radius?:boolean
+    radius?:boolean,
+  
+
 }
 
 
 export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link,text,radius}:Prop)=>{
-    return <S.ContainerButtonMenu href={link}  radiusState={radius} bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
+    return <S.ContainerButtonMenu  href={link}  radiusState={radius} bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
         <S.ButtonIcon src={src} />   
         <S.TextButton>
         {text}

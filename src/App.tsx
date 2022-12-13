@@ -7,7 +7,9 @@ import UserIcon from '.././src/assets/imgs/user.png'
 import LojaIcon from '.././src/assets/imgs/lojaicon.png'
 import MotoIcon from '.././src/assets/imgs/moto.png'
 import LogoIcon from '.././src/assets/imgs/logo.png'
-
+import FaceIcon from '.././src/assets/imgs/face.png'
+import InstaIcon from '.././src/assets/imgs/insta.png'
+import TikTokIcon from '.././src/assets/imgs/tiktok.png'
 
 const App=()=>{
   
@@ -38,7 +40,8 @@ const App=()=>{
   return <S.Body>
         <S.LeftContent>
             <S.Menu>
-              <ButtonMenu link='/'
+             
+                   <ButtonMenu link='/'
                   onClick={()=>ClickViewHome} 
                   iconActive={viewHome} 
                   src={LojaIcon}  
@@ -58,8 +61,9 @@ const App=()=>{
                  src={UserIcon} 
                  link='/user'
                  marginhorizontal='10' 
-                 marginvertical='10' 
+                 marginvertical='10'
                  text='conta'/>
+                 
             </S.Menu>
         </S.LeftContent>
 
@@ -67,12 +71,20 @@ const App=()=>{
           <S.HeaderApp>
             <S.CardLoja>
               <div className="logo">
-              <img src={LogoIcon} alt="" /> <span>Rangoo</span>
+               <div><img src={LogoIcon} alt="" /> <span className='text-logo'>Samira Modas</span></div>
+              <div className="icons-rede">
+               
+                    <a href="" className='social-img'> <img src={FaceIcon} alt="" /></a>
+                    <a href="" className='social-img'> <img src={TikTokIcon} alt="" /></a>
+                    <a href="" className='social-img'> <img src={InstaIcon} alt="" /></a>
+               </div>
               </div>
+             
               <div className="search-loja">
                   <input type="search" name="" id="" />
               </div>
             </S.CardLoja>
+
           </S.HeaderApp>
           <Routes/>
   

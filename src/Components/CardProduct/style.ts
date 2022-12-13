@@ -19,19 +19,19 @@ export const Container=styled.div`
 `
 
 export const  ContainerImage=styled.div`
-    background: #485161;
-    height: 100px;
+    background: #3b4161;
+    height: 190px;
     display: flex;
     padding: 12px 0;
     justify-content:center;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     width:100%;
+    padding-top:12px;
   
     img{
-        max-width:120px;
-        height:120px;
-        margin-top:20px;
+        max-width:130px;
+        height:150px;
         @media screen and (max-width:600px){
         width: 70px;
         height: 70px;
@@ -52,9 +52,10 @@ export const DataProduct=styled.div`
     padding: 18px 10px;
     margin-top:12px;
     flex-direction:column;
-
+    
         .info-product{
             margin: 15px 0;
+           
             
             .category--name:{
                     color: #aaa;
@@ -107,14 +108,14 @@ export const DataProduct=styled.div`
             font-weight:bold;
             text-transform:uppercase;
             padding: 12px 20px;
-            background: #485161;
+            background: #3b4161 ;
             color: white;
-            border: 2px solid #485161;
+            border: 2px solid #3b4161;
             border-radius:5px;
             &:hover{
                 cursor:pointer;
                 background:transparent;
-                color: #485161;
+                color: #3b4161;
                 border: 2px solid  #485161e;
             }
          }

@@ -1,35 +1,32 @@
 import { useState,useEffect } from "react"
-import { BannerPromotion } from "../../Components/BannerPromotions"
-import bannerImage from '../../assets/imgs/banner.jpg'
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
 import { Product } from "../../Types/Products"
-import { dataBlusas } from "../../data/Product"
-import BebidasIcon from '../../assets/imgs/iconBebida.png'
-import ResturantIcon from '../../assets/imgs/restaurante.png'
-import PizzaIcon from '../../assets/imgs/iconspizza.png'
-import LanchesIcon from '../../assets/imgs/iconhamburguer.png'
+import calcinhaIcon from '../../assets/imgs/calcinha.png'
+import JeansIcon from '../../assets/imgs/jeans.png'
+import sapatoIcon from '../../assets/imgs/sapatoF.png'
+import camisasIcon from '../../assets/imgs/camisasF.png'
 import { ButtonMenu } from "../../Components/ButtonMenu"
 import { CardCliked } from "../../Components/CardProductCliked"
-import { dataSapatos} from "../../data/Product"
-import { dataBaby } from "../../data/Product"
-import { RestaurantePage } from "./../RestaurantePage"
-import { Bad } from "../../Components/Bad"
-import { ProductBad } from "../../Components/ProductBad"
+import { dataBlouses,dataShoes,dataShorts,dataUnderwear} from '../../data/Product'
+import { Cart } from "../../Components/Cart"
+import { ProductCart } from "../../Components/ProductCart"
 import { ApiProduct } from "../../Api/ApiProducts"
 
 
 export const Showcase=()=>{
-    const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBlusas)
-    const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataSapatos)
-    const [drinksProductList,setDrinksProductList]=useState<Product[] >(dataBaby)
+    const [blosesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
+    const [shoesProductList,setShoesProductList]=useState<Product[]>(dataShoes)
+    const [shortsProductList,setShortsProductList]=useState<Product[] >(dataShorts)
+    const [undewearProductList,setUnderwear]=useState(dataUnderwear)
     const [dataProductCliked,setDataProductCliked]=useState<Product | any>()
-    const [displayBurguer,setDisplayBurguer]=useState<boolean>(true)
-    const [displayPizzas,setDisplayPizzas]=useState<boolean>(false)
-    const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
-    const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
+   
+    const [displayBlouses,setDisplayBlouses]=useState<boolean>(true)
+    const [displayShoes,setDisplayShoes]=useState<boolean>(false)
+    const [displayUndewear ,setDisplayUnderwear]=useState<boolean>(false)
+    const [displayShorts,setDisplayShorts]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
-    const [productbad,setProductBad]=useState([17])
+    const [productCart,setProductCart]=useState([17])
 
    /* useEffect(()=>{
     const loadBurguers=async()=>{
@@ -45,29 +42,30 @@ export const Showcase=()=>{
     const closeModal=()=>setOnModal(false)
 
 
-    const actionDisplayBurguers=()=>{
-        setDisplayBurguer(true)
-        setDisplayPizzas(false)
-        setDisplayDrinks(false)
-        setDisplayRestaurant(false)
+    const actionDisplayBlouses=()=>{
+        setDisplayShoes(false)
+        setDisplayBlouses(true)
+        setDisplayShorts(false)
+        setDisplayUnderwear(false)
     }
-    const actionDisplayPizzas=()=>{
-        setDisplayBurguer(false)
-        setDisplayPizzas(true)
-        setDisplayDrinks(false)
-        setDisplayRestaurant(false)
+    const actionDisplayShoes=()=>{
+        setDisplayShoes(true)
+        setDisplayBlouses(false)
+        setDisplayShorts(false)
+        setDisplayUnderwear(false)
     }
-    const actionDisplayDrinks=()=>{
-        setDisplayBurguer(false)
-        setDisplayPizzas(false)
-        setDisplayDrinks(true)
-        setDisplayRestaurant(false)
+    const actionDisplayShorts=()=>{
+        setDisplayShoes(false)
+        setDisplayBlouses(false)
+        setDisplayUnderwear(false)
+        setDisplayShorts(true)
     }
-    const actionDisplayRestaurante=()=>{
-        setDisplayRestaurant(true)
-        setDisplayBurguer(false)
-        setDisplayPizzas(false)
-        setDisplayDrinks(false)
+
+    const actionDisplayUnderwear=()=>{
+        setDisplayShoes(false)
+        setDisplayBlouses(false)
+        setDisplayShorts(false)
+        setDisplayUnderwear(true)
     }
 
     const returnDataClikedProduct=(data:Product)=>{
@@ -80,14 +78,14 @@ export const Showcase=()=>{
     }
 
     const conditionCategoryTitle=()=>{
-        if(displayBurguer){
-            return 'Hamburguers'
-        }else if(displayDrinks){
-            return 'Bebidas'
-        }else if(displayPizzas){
-            return 'Pizzas'
+        if(displayShoes){
+            return 'Calçados'
+        }else if(displayBlouses){
+            return 'Blusas'
+        }else if(displayShorts){
+            return 'Shorts'
         }else{
-            return 'Marmita'
+            return 'Peça Intima'
         }
     }
 
@@ -96,52 +94,55 @@ export const Showcase=()=>{
     return <S.Container>
     <S.CategorySectionProducts>
       <>
-      <p>Selecione uma categoria :</p>
-        <div className="cx-btn-icons">
-            <ButtonMenu  bg='#717b8f' 
-                 iconActive={displayBurguer ? true : false} src={LanchesIcon} 
-                 marginhorizontal='10' marginvertical='10'  
-                 onClick={actionDisplayBurguers}
-                radius={true}
-            />
-            <ButtonMenu bg='#717b8f' 
-                iconActive={displayDrinks ? true : false} src={BebidasIcon} 
-                marginhorizontal='10' 
-                marginvertical='10'  
-                onClick={actionDisplayDrinks} 
-                radius={true}
-            />
-            <ButtonMenu bg='#717b8f' 
-                iconActive={displayPizzas ? true : false} src={PizzaIcon} 
-                marginhorizontal='10' 
-                marginvertical='10' 
-                onClick={actionDisplayPizzas} 
-                radius={true}
-            />
-              <ButtonMenu bg='#717b8f' 
-                iconActive={displayRestaurant} src={ResturantIcon} 
-                marginhorizontal='10' 
-                marginvertical='10' 
-                onClick={actionDisplayRestaurante} 
-                radius={true}
-            />
-           
-        </div>
-        <p className="category-title">Produtos: <span>{conditionCategoryTitle()}</span> </p>
+        <p>Selecione uma categoria :</p>
+            <div className="cx-btn-icons">
+                <ButtonMenu  bg='#717b8f' 
+                    iconActive={displayShoes ? true : false} src={sapatoIcon} 
+                    marginhorizontal='10' marginvertical='10'  
+                    onClick={actionDisplayShoes}
+                    radius={true}
+                    text='calçados'
+                />
+                <ButtonMenu bg='#717b8f' 
+                    iconActive={displayBlouses ? true : false} src={camisasIcon} 
+                    marginhorizontal='10' 
+                    marginvertical='10'  
+                    onClick={actionDisplayBlouses} 
+                    radius={true}
+                    text='Blusas'
+                />
+                <ButtonMenu bg='#717b8f' 
+                    iconActive={displayShorts ? true : false} src={JeansIcon} 
+                    marginhorizontal='10' 
+                    marginvertical='10' 
+                    onClick={actionDisplayShorts} 
+                    radius={true}
+                    text='shorts'
+                />
+                <ButtonMenu bg='#717b8f '
+                    iconActive={displayUndewear} src={calcinhaIcon} 
+                    marginhorizontal='10' 
+                    marginvertical='10' 
+                    onClick={actionDisplayUnderwear} 
+                    radius={true}
+                    text='intima'
+                />
+            
+            </div>
+            <p className="category-title">Produtos: <span>{conditionCategoryTitle()}</span> </p>
       </>
     </S.CategorySectionProducts>
   
-    <S.ShowcaseProduct stateDisplay={displayRestaurant}> 
-        { displayBurguer ? burguerProductList && burguerProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct} data={item} />) : null}
-        { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
-        { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
-        { displayRestaurant  && <RestaurantePage/>}
-        <Bad >
-          {productbad.map((item,index)=>(
-            <ProductBad key={index} />
-           
-          ))}
-        </Bad>
+    <S.ShowcaseProduct > 
+        { displayBlouses ? blosesProductList && blosesProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct} data={item} />) : null}
+        { displayShoes ? shoesProductList && shoesProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
+        { displayShorts ? shortsProductList && shortsProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
+        { displayUndewear  ?  undewearProductList && undewearProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
+        <Cart >
+          {productCart.map((item,index)=>(
+            <ProductCart key={index} />
+           ))}
+        </Cart>
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
         <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>

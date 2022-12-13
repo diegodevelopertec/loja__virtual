@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-type Props={
-    stateDisplay:boolean;
-}
+
 export const Container=styled.div`
     width: 100%;
     opacity: 1;
@@ -25,11 +23,13 @@ export const ContainerBanner=styled.div`
 `
 export const CategorySectionProducts=styled.div`
     margin: 20px 0 0 ;
+    font-size:18px;
     color:#5a5b5c;
     font-weight:bold;
     background:#edeceb;
-    flex-direction:columns;
-
+    flex-direction:column;
+    display: flex;
+    align-items:center;
 
     .category-title{
        padding-top:15px;
@@ -48,30 +48,27 @@ export const CategorySectionProducts=styled.div`
     padding: 20px 10px;
 
     @media screen and (max-width:950px){
-        justify-content:center;
         text-align:center;
         .cx-btn-icons{
             justify-content:center;
             margin: 0;
         }
         .category-title{
-       
-        justify-content:center;
-    }
+          justify-content:center;
+         }
 }
 `
 
 
-export const ShowcaseProduct=styled.div<Props>`
-    display: ${props=>props.stateDisplay === false ? 'grid' : 'block'};
+export const ShowcaseProduct=styled.div`
+    display: grid ;
     grid-template-columns:repeat(4,1fr);
     gap:10px;
     transition: all ease 0.2;
-   padding-bottom:150px;
-   padding: 30px 10px;
-   padding-bottom:90px;
+    padding-bottom:150px;
+    padding: 30px 10px;
+    padding-bottom:90px;
     background:#edeceb;
-   // background:  ${props=>props.stateDisplay === false ? '#474745' : '#edeceb'};
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
       padding-bottom:100px;
