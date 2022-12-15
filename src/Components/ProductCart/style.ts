@@ -47,13 +47,13 @@ export const Container=styled.div`
             width: 30px;
         }
         .btn-minus{
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
 
         }
         .btn-add{
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
         }
         .cx-qdt{
             display:flex;

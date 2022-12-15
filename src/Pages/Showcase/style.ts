@@ -24,12 +24,14 @@ export const ContainerBanner=styled.div`
 `
 export const CategorySectionProducts=styled.div`
 justify-content:center;
-display: flex;
+margin: 100px 0;
+display:flex;
     .area{
       box-shadow:0 0 10px #564061;
       margin: 20px 0 0 ;
       font-size:15px;
       color:white;
+      height:250px;
       font-weight:bold;
       background:${ThemeStyle.bgTheme};
       border-radius:15px;
@@ -39,10 +41,16 @@ display: flex;
       align-items:center;
       .category-title{
         padding-top:15px;
-          display: flex;
+          width: 250px;
+          min-width:150px;
+         display: flex;
+          background: ${ThemeStyle.bgActiveIconMenu};
+          margin-top:30px;
+          padding: 30px ;
+          border-radius:5px;
           span{
               margin-left:10px;
-              text-decoration:underline;
+             
             
           }
       }
@@ -70,7 +78,7 @@ display: flex;
 }
 
 
-    }
+    
 
     
 `

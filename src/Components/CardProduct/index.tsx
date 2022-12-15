@@ -13,7 +13,7 @@ const ClikeData=()=>onClick(data)
    
     return <S.Container >
         <S.ContainerImage>
-            <img src={data?.imageProduct}/>
+            <img src={data?.imageDefault}/>
         </S.ContainerImage>
         <S.DataProduct>
             <div className='info-product'>

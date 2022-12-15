@@ -11,7 +11,7 @@ export const Container=styled.div<Props>`
     color:white;
     bottom: 0;
     right:10px;
-    width: 360px;
+    width: 460px;
     padding:10px;
     box-shadow: 0 0 5px #aaa;
     border-top-left-radius:5px;

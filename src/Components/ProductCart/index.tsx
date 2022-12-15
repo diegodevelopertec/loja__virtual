@@ -32,7 +32,7 @@ export const ProductCart=()=>{
     return <S.Container>
         <div className="area-left">
             <div className='area--image'>
-                <img src={dataBlouses[0].imageProduct} alt="" />
+                <img src={dataBlouses[0].imageDefault} alt="" />
             </div>
             <div className="area-text">
                 <span className='name'>

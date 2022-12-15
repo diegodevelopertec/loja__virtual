@@ -4,7 +4,8 @@ import { ThemeStyle } from "../../styled";
 
 export const Container=styled.div`
     display: flex;
-    width:640px;
+    width:740px;
+    height: 500px;
     background-color:${ThemeStyle.bgAppSystem};
     box-shadow:0 0 5px #aaa;
     border-radius:6px;
@@ -110,22 +111,22 @@ export const ContainerData=styled.div`
                 }
                 button{
                     height: 50px;
-                    width: 50px;
+                    width: 70px;
                     background:${ThemeStyle.bgTheme};
                     color: white;
                     border:0;
-                    font-size:14px;
+                    font-size:18px;
                     &:hover{
                         cursor: pointer;
                     }
                 }
                 .btn-minus{
-                    border-top-left-radius:5px;
-                    border-bottom-left-radius:5px;
+                    border-top-left-radius:25px;
+                    border-bottom-left-radius:25px;
                 }
                 .btn-add{
-                    border-top-right-radius:5px;
-                    border-bottom-right-radius:5px;
+                    border-top-right-radius:25px;
+                    border-bottom-right-radius:25px;
                 }
             }
 
