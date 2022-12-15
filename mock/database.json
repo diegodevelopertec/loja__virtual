@@ -2,11 +2,16 @@
   "products": [
     {
       "id": 1,
-      " category": "Hamburguers",
-      "name": "X-Burguer",
-      "price": 6,
+      " category": "Blusa",
+      "tamanho":"GG",
+      "name": "Blusa qlr",
+      "price": 28,
       " imageProduct": "bg3.png",
-      "igredientes": "Hamburguer,Queijo,Presunto e Maionese"
+      "imageDefault":"",
+      "images":[],
+     "detailsProduct":"essa é uma blusa moderna e bonta para voçê desfilar legal",
+      "qdt":1
+       
     }
   ],
   "users": []

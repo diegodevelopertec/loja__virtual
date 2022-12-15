@@ -1,12 +1,12 @@
 import styled from "styled-components";
-
+import { ThemeStyle } from "../../styled";
 type Props={
   displayCart:boolean,
  
 }
 export const Container=styled.div<Props>`
     
-    background:#3b4161;
+    background:${ThemeStyle.bgTheme};
     position: absolute;
     color:white;
     bottom: 0;

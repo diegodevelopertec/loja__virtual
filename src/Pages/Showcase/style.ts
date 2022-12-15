@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeStyle } from "../../styled";
 
 
 export const Container=styled.div`
@@ -22,41 +23,56 @@ export const ContainerBanner=styled.div`
   }
 `
 export const CategorySectionProducts=styled.div`
-    margin: 20px 0 0 ;
-    font-size:18px;
-    color:#5a5b5c;
-    font-weight:bold;
-    background:#edeceb;
-    flex-direction:column;
-    display: flex;
-    align-items:center;
-
-    .category-title{
-       padding-top:15px;
-        display: flex;
-        span{
-            margin-left:10px;
-            text-decoration:underline;
-            color: #aaa;
-        }
-    }
-   .cx-btn-icons{
-        display: flex;
-        margin: 20px 0 0px 80px;
-       
-    }
-    padding: 20px 10px;
+justify-content:center;
+display: flex;
+    .area{
+      box-shadow:0 0 10px #564061;
+      margin: 20px 0 0 ;
+      font-size:15px;
+      color:white;
+      font-weight:bold;
+      background:${ThemeStyle.bgTheme};
+      border-radius:15px;
+      width: 90%;
+      flex-direction:column;
+      display: flex;
+      align-items:center;
+      .category-title{
+        padding-top:15px;
+          display: flex;
+          span{
+              margin-left:10px;
+              text-decoration:underline;
+            
+          }
+      }
+    .cx-btn-icons{
+          display: flex;
+          margin: 20px  0px ;
+        
+      }
+      padding: 20px 10px;
 
     @media screen and (max-width:950px){
         text-align:center;
         .cx-btn-icons{
             justify-content:center;
             margin: 0;
+            padding: 10px;
+           
+            
+            }
+         
         }
         .category-title{
           justify-content:center;
          }
 }
+
+
+    }
+
+    
 `
 
 

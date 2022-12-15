@@ -3,11 +3,11 @@ export type Product={
     id:number,
     name:string,
     category:string,
-    tamanho:string,
+    tamanho: string,
     numero:number,
     price: number,
-    imageProduct:string,
-    images:[] | any,
+    imageDefault:string,
+    images:[] | string,
     detailsProduct:string,
     qdt:number
 }

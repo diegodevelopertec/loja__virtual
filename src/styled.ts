@@ -1,21 +1,30 @@
 import styled from 'styled-components'
 import BgImage from '.././src/assets/imgs/bg.jpg'
 
+export const ThemeStyle={
+    bgTheme:'#263852',
+    bgAppSystem:'#edeceb',
+    bgCardProductBottom:'#2f302f' ,
+    colorTitleCard: 'black',
+    colorIngredientsCategory:' #aaa',
+    colorTextCard: '',
+    bgHoverIcon: '#455163',
+    bgActiveIconMenu:'#564061'
+
+}
 
 
 export const Body=styled.div`
-    background-color: #eee;
     display:flex;
     height:100vh;
     width: 100vw;
     overflow:hidden;
-    background-color: #dadce0;
-    background: #ede8ec;
+    background:${ThemeStyle.bgAppSystem};
 
 `
 
 export const LeftContent=styled.div`
-    background:#3b4161;
+    background:${ThemeStyle.bgTheme};
     width: 10%;
     display: flex;
     justify-content:center;
@@ -30,8 +39,7 @@ export const LeftContent=styled.div`
      box-shadow:0 0 5px #aaa;
      border-top-left-radius:20px;
      border-top-right-radius:20px;
-       
-        margin-bottom:0;
+     margin-bottom:0;
 
    }
  
@@ -41,7 +49,7 @@ export const HeaderApp=styled.header`
     display: flex;
     justify-content:center;
     margin: 10px;
-    background-color: #625B5B54A;
+    background: initial;
     .text-logo{
         color: #485161;
     }
@@ -62,22 +70,23 @@ export const CardLoja=styled.div`
     min-height: 100px;
     border-radius:10px;
     color:#485161;
-.logo{
-    font-size:2rem;
-    color: white;
-    display: flex;
-    justify-content:center;
-    flex-direction:column;
-    align-items:center;
+    .logo{
+        font-size:2rem;
+        color: white;
+        display: flex;
+        justify-content:center;
+        flex-direction:column;
+        align-items:center;
+           
+    .icons-rede{
+        display:flex;
         img{
-            margin-right:4px;
-            height: 30px;
-            width: 30px;
-        }
-   .icons-rede{
-    display:flex
-   }
- 
+                margin-right:4px;
+                height: 30px;
+                width: 30px;
+            }
+    }
+    
 }
 
 .search-loja{

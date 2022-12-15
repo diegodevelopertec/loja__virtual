@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { ThemeStyle } from "../../styled";
+
 
 export const Container=styled.div`
     display: flex;
     width:640px;
-    background-color:#e6e5e3;
+    background-color:${ThemeStyle.bgAppSystem};
     box-shadow:0 0 5px #aaa;
     border-radius:6px;
   
@@ -28,7 +30,7 @@ export const Container=styled.div`
 
 export const ContainerImage=styled.div`
     width:35%;
-    background: #3b4161 ;
+    background: ${ThemeStyle.bgTheme};
     display: flex;
     justify-content:center;
     align-items:center;
@@ -67,7 +69,9 @@ export const ContainerData=styled.div`
                 margin-right:5px;
                 font-weight:bold;
             }
-            .category{ color:#c4c3c2;}
+            .category{ 
+                color:${ThemeStyle.colorIngredientsCategory};
+            }
             padding: 20px 0;
             display: flex;
             justify-content:center;
@@ -76,13 +80,13 @@ export const ContainerData=styled.div`
     
         .ingredientes{
             font-size:1rem;
-            color:#c4c3c2;
+            color:${ThemeStyle.colorIngredientsCategory};
             word-break:break-all;
             text-align:justify;
         }
         .cx-price{
             padding: 12px 0;
-            color: #485161;
+            color:${ThemeStyle.bgTheme};
             font-size:2rem;
         }
 
@@ -107,7 +111,7 @@ export const ContainerData=styled.div`
                 button{
                     height: 50px;
                     width: 50px;
-                    background: #3b4161 ;
+                    background:${ThemeStyle.bgTheme};
                     color: white;
                     border:0;
                     font-size:14px;
@@ -140,13 +144,15 @@ export const ContainerData=styled.div`
                     color: #e6e5e3;
                     border-radius:6px;
                     font-size:13px;
+                    height: 50px;
+                    width:160px;
                     &:hover{
                         cursor:pointer;
                     }
                 }
             .btn-save{
-                height: 50px;
-                background: #3b4161 ;
+                
+                background:${ThemeStyle.bgTheme};
                 &:hover{
                 color:  #485161;
                 border: 2px solid  #485161;
@@ -154,10 +160,10 @@ export const ContainerData=styled.div`
                 }
             }
             .btn-cancel{
-                height: 40px;
+                
                 background:#de473c;
                 margin-right:12px;
-                width: 100px;
+              
                 &:hover{
                     border: 2px solid  #de473c;
                     color:  #de473c;
@@ -175,23 +181,23 @@ export const ContainerData=styled.div`
     @media screen and (max-width:600px){
         padding: 10px;
 
-    .cx-qdt{
-            align-items:center;
-            text-align:center;
-            p{color: #374969;}
-    }
-        .cx-price{
-            display: family;
-            justify-content:center;    
-        }
-        .price-modal{
-            text-align:center;
-            margin: 20px 0;
-            background: #eee;
-            padding: 12px 5px;
-            border-radius:5px;
-            width:70vw;
-        }
+            .cx-qdt{
+                    align-items:center;
+                    text-align:center;
+                    p{color: #374969;}
+            }
+            .cx-price{
+                display: family;
+                justify-content:center;    
+            }
+            .price-modal{
+                text-align:center;
+                margin: 20px 0;
+                background: #eee;
+                padding: 12px 5px;
+                border-radius:5px;
+                width:70vw;
+            }
      
     }
 

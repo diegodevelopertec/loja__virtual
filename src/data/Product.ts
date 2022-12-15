@@ -7,7 +7,7 @@ export const dataUnderwear=[
     tamanho:'P',
     numero:12,
     price: 80,
-    imageProduct:'../../src/assets/imgs/blusaF.png',
+    imageDefault:'../../src/assets/imgs/blusaF.png',
     images:'',
     detailsProduct:'',
     qdt:1
@@ -18,7 +18,7 @@ export const dataUnderwear=[
         tamanho:'P',
         numero:12,
         price: 80,
-        imageProduct:'../../src/assets/imgs/blusaF.png',
+        imageDefault:'../../src/assets/imgs/blusaF.png',
         images:'',
         detailsProduct:'',
         qdt:1
@@ -29,7 +29,7 @@ export const dataUnderwear=[
             tamanho:'P',
             numero:12,
             price: 80,
-            imageProduct:'../../src/assets/imgs/blusaF.png',
+            imageDefault:'../../src/assets/imgs/blusaF.png',
             images:'',
             detailsProduct:'',
             qdt:1
@@ -40,7 +40,7 @@ export const dataUnderwear=[
                 tamanho:'P',
                 numero:12,
                 price: 80,
-                imageProduct:'../../src/assets/imgs/blusaF.png',
+                imageDefault:'../../src/assets/imgs/blusaF.png',
                 images:'',
                 detailsProduct:'',
                 qdt:1
@@ -51,7 +51,7 @@ export const dataUnderwear=[
                tamanho:'P',
                numero:12,
                price: 80,
-               imageProduct:'../../src/assets/imgs/blusaF.png',
+               imageDefault:'../../src/assets/imgs/blusaF.png',
                images:'',
                detailsProduct:'',
                qdt:1
@@ -62,7 +62,7 @@ export const dataUnderwear=[
               tamanho:'P',
               numero:12,
               price: 80,
-             imageProduct:'../../src/assets/imgs/blusaF.png',
+              imageDefault:'../../src/assets/imgs/blusaF.png',
              images:'',
              detailsProduct:'',
              qdt:1
@@ -73,7 +73,7 @@ export const dataUnderwear=[
              tamanho:'P',
              numero:12,
              price: 80,
-             imageProduct:'../../src/assets/imgs/blusaF.png',
+             imageDefault:'../../src/assets/imgs/blusaF.png',
              images:'',
              detailsProduct:'',
              qdt:1
@@ -87,7 +87,7 @@ export const dataShoes=[
         tamanho:'P',
         numero:12,
         price: 80,
-        imageProduct:'../../src/assets/imgs/blusaF.png',
+        imageDefault:'../../src/assets/imgs/blusaF.png',
         images:'',
         detailsProduct:'',
         qdt:1
@@ -98,7 +98,7 @@ export const dataShoes=[
             tamanho:'P',
             numero:12,
             price: 80,
-            imageProduct:'../../src/assets/imgs/blusaF.png',
+            imageDefault:'../../src/assets/imgs/blusaF.png',
             images:'',
             detailsProduct:'',
             qdt:1
@@ -109,7 +109,7 @@ export const dataShoes=[
                 tamanho:'P',
                 numero:12,
                 price: 80,
-                imageProduct:'../../src/assets/imgs/blusaF.png',
+                imageDefault:'../../src/assets/imgs/blusaF.png',
                 images:'',
                 detailsProduct:'',
                 qdt:1
@@ -120,7 +120,7 @@ export const dataShoes=[
                     tamanho:'P',
                     numero:12,
                     price: 80,
-                    imageProduct:'../../src/assets/imgs/blusaF.png',
+                    imageDefault:'../../src/assets/imgs/blusaF.png',
                     images:'',
                     detailsProduct:'',
                     qdt:1
@@ -131,7 +131,7 @@ export const dataShoes=[
                    tamanho:'P',
                    numero:12,
                    price: 80,
-                   imageProduct:'../../src/assets/imgs/blusaF.png',
+                   imageDefault:'../../src/assets/imgs/blusaF.png',
                    images:'',
                    detailsProduct:'',
                    qdt:1
@@ -142,7 +142,7 @@ export const dataShoes=[
                   tamanho:'P',
                   numero:12,
                   price: 80,
-                 imageProduct:'../../src/assets/imgs/blusaF.png',
+                  imageDefault:'../../src/assets/imgs/blusaF.png',
                  images:'',
                  detailsProduct:'',
                  qdt:1
@@ -153,7 +153,7 @@ export const dataShoes=[
                  tamanho:'P',
                  numero:12,
                  price: 80,
-                 imageProduct:'../../src/assets/imgs/blusaF.png',
+                 imageDefault:'../../src/assets/imgs/blusaF.png',
                  images:'',
                  detailsProduct:'',
                  qdt:1
@@ -167,7 +167,7 @@ export const dataShorts=[
         tamanho:'P',
         numero:12,
         price: 80,
-        imageProduct:'../../src/assets/imgs/blusaF.png',
+        imageDefault:'../../src/assets/imgs/blusaF.png',
         images:'',
         detailsProduct:'',
         qdt:1
@@ -178,7 +178,7 @@ export const dataShorts=[
             tamanho:'P',
             numero:12,
             price: 80,
-            imageProduct:'../../src/assets/imgs/blusaF.png',
+            imageDefault:'../../src/assets/imgs/blusaF.png',
             images:'',
             detailsProduct:'',
             qdt:1
@@ -189,7 +189,7 @@ export const dataShorts=[
                 tamanho:'P',
                 numero:12,
                 price: 80,
-                imageProduct:'../../src/assets/imgs/blusaF.png',
+                imageDefault:'../../src/assets/imgs/blusaF.png',
                 images:'',
                 detailsProduct:'',
                 qdt:1
@@ -200,7 +200,7 @@ export const dataShorts=[
                     tamanho:'P',
                     numero:12,
                     price: 80,
-                    imageProduct:'../../src/assets/imgs/blusaF.png',
+                    imageDefault:'../../src/assets/imgs/blusaF.png',
                     images:'',
                     detailsProduct:'',
                     qdt:1
@@ -211,7 +211,7 @@ export const dataShorts=[
                    tamanho:'P',
                    numero:12,
                    price: 80,
-                   imageProduct:'../../src/assets/imgs/blusaF.png',
+                   imageDefault:'../../src/assets/imgs/blusaF.png',
                    images:'',
                    detailsProduct:'',
                    qdt:1
@@ -222,7 +222,7 @@ export const dataShorts=[
                   tamanho:'P',
                   numero:12,
                   price: 80,
-                 imageProduct:'../../src/assets/imgs/blusaF.png',
+                  imageDefault:'../../src/assets/imgs/blusaF.png',
                  images:'',
                  detailsProduct:'',
                  qdt:1
@@ -233,7 +233,7 @@ export const dataShorts=[
                  tamanho:'P',
                  numero:12,
                  price: 80,
-                 imageProduct:'../../src/assets/imgs/blusaF.png',
+                 imageDefault:'../../src/assets/imgs/blusaF.png',
                  images:'',
                  detailsProduct:'',
                  qdt:1
@@ -247,7 +247,7 @@ export const dataBlouses=[
      tamanho:'P',
      numero:12,
      price: 80,
-     imageProduct:'../../src/assets/imgs/blusaF.png',
+     imageDefault:'../../src/assets/imgs/blusaF.png',
      images:'',
      detailsProduct:'',
      qdt:1
@@ -258,7 +258,7 @@ export const dataBlouses=[
          tamanho:'P',
          numero:12,
          price: 80,
-         imageProduct:'../../src/assets/imgs/blusaF.png',
+         imageDefault:'../../src/assets/imgs/blusaF.png',
          images:'',
          detailsProduct:'',
          qdt:1
@@ -269,7 +269,7 @@ export const dataBlouses=[
              tamanho:'P',
              numero:12,
              price: 80,
-             imageProduct:'../../src/assets/imgs/blusaF.png',
+             imageDefault:'../../src/assets/imgs/blusaF.png',
              images:'',
              detailsProduct:'',
              qdt:1
@@ -280,7 +280,7 @@ export const dataBlouses=[
                  tamanho:'P',
                  numero:12,
                  price: 80,
-                 imageProduct:'../../src/assets/imgs/blusaF.png',
+                 imageDefault:'../../src/assets/imgs/blusaF.png',
                  images:'',
                  detailsProduct:'',
                  qdt:1
@@ -291,7 +291,7 @@ export const dataBlouses=[
                 tamanho:'P',
                 numero:12,
                 price: 80,
-                imageProduct:'../../src/assets/imgs/blusaF.png',
+                imageDefault:'../../src/assets/imgs/blusaF.png',
                 images:'',
                 detailsProduct:'',
                 qdt:1
@@ -302,7 +302,7 @@ export const dataBlouses=[
                tamanho:'P',
                numero:12,
                price: 80,
-              imageProduct:'../../src/assets/imgs/blusaF.png',
+               imageDefault:'../../src/assets/imgs/blusaF.png',
               images:'',
               detailsProduct:'',
               qdt:1
@@ -313,7 +313,7 @@ export const dataBlouses=[
               tamanho:'P',
               numero:12,
               price: 80,
-              imageProduct:'../../src/assets/imgs/blusaF.png',
+              imageDefault:'../../src/assets/imgs/blusaF.png',
               images:'',
               detailsProduct:'',
               qdt:1

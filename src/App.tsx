@@ -1,6 +1,9 @@
 import * as S from './styled'
-import { EventHandler, useState } from 'react'
+import { useState } from 'react'
 import { Routes } from './Routes'
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ButtonMenu } from './Components/ButtonMenu'
 import BurguerImage from '.././src/assets/imgs/burguer.png'
 import UserIcon from '.././src/assets/imgs/user.png'
@@ -89,6 +92,7 @@ const App=()=>{
           <Routes/>
   
         </S.RightContent>
+        <ToastContainer />
   </S.Body>
 }
 

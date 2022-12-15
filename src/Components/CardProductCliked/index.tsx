@@ -39,7 +39,7 @@ const actionsModal={
 
     return <S.Container>
         <S.ContainerImage>
-           <img src={data.imageProduct} alt="" />
+           <img src={data.imageDefault} alt="" />
         </S.ContainerImage>
         <S.ContainerData>
             <div className="data-top">

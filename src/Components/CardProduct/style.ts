@@ -1,10 +1,10 @@
 import styled from "styled-components";
-
+import { ThemeStyle } from "../../styled";
 
 
 export const Container=styled.div`
   
-    background-color: #e3e8e4;
+    background-color:${ThemeStyle.bgAppSystem};
     box-shadow: 0 0 7px #aaa;
     margin:12px 5px;
     border-radius:5px;
@@ -19,7 +19,7 @@ export const Container=styled.div`
 `
 
 export const  ContainerImage=styled.div`
-    background: #3b4161;
+    background: ${ThemeStyle.bgTheme};
     height: 190px;
     display: flex;
     padding: 12px 0;
@@ -58,7 +58,7 @@ export const DataProduct=styled.div`
            
             
             .category--name:{
-                    color: #aaa;
+                    color: ${ThemeStyle.colorIngredientsCategory};
                     padding: 5px 0;
                     text-transform: capitalize;
                 }
@@ -67,12 +67,12 @@ export const DataProduct=styled.div`
                     color: black;
                 }
                 p{
-                    color: #aaa;
+                    color: ${ThemeStyle.colorIngredientsCategory};
                     margin: 10px 0;
                     font-size:1rem;
                 }
                 .price{
-                    color: #485161;
+                    color: ${ThemeStyle.bgTheme};
                     font-family:Arial;
                     font-weight:bold;
                     width: 100px;
@@ -80,7 +80,7 @@ export const DataProduct=styled.div`
                 .details-text{
                     word-break:break-all;
                     font-size:13px;
-                   padding: 5px 0;
+                    padding: 5px 0;
                 }
 
                 @media screen and (max-width:600px){
@@ -108,15 +108,15 @@ export const DataProduct=styled.div`
             font-weight:bold;
             text-transform:uppercase;
             padding: 12px 20px;
-            background: #3b4161 ;
+            background-color: ${ThemeStyle.bgTheme};
             color: white;
-            border: 2px solid #3b4161;
+            border: 2px solid ${ThemeStyle.bgTheme};
             border-radius:5px;
             &:hover{
                 cursor:pointer;
                 background:transparent;
-                color: #3b4161;
-                border: 2px solid  #485161e;
+                color:${ThemeStyle.bgTheme};
+                border: 2px solid  ${ThemeStyle.bgTheme};
             }
          }
          @media screen and (max-width:600px){

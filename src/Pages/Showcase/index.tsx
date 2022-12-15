@@ -12,7 +12,8 @@ import { dataBlouses,dataShoes,dataShorts,dataUnderwear} from '../../data/Produc
 import { Cart } from "../../Components/Cart"
 import { ProductCart } from "../../Components/ProductCart"
 import { ApiProduct } from "../../Api/ApiProducts"
-
+import { ThemeStyle } from "../../styled"
+import { toast } from "react-toastify"
 
 export const Showcase=()=>{
     const [blosesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
@@ -74,6 +75,7 @@ export const Showcase=()=>{
     }
 
     const setDataBad=()=>{
+        toast.success('Produto adicionado  no carrinho')
         closeModal()
     }
 
@@ -93,33 +95,35 @@ export const Showcase=()=>{
 
     return <S.Container>
     <S.CategorySectionProducts>
-      <>
-        <p>Selecione uma categoria :</p>
-            <div className="cx-btn-icons">
-                <ButtonMenu  bg='#717b8f' 
-                    iconActive={displayShoes ? true : false} src={sapatoIcon} 
+      <div className="area">
+        
+      <p>Selecione uma categoria :</p>
+           
+           <div className="cx-btn-icons">
+                <ButtonMenu  bg={ThemeStyle.bgTheme} 
+                    iconActive={displayShoes} src={sapatoIcon} 
                     marginhorizontal='10' marginvertical='10'  
                     onClick={actionDisplayShoes}
                     radius={true}
                     text='calçados'
                 />
-                <ButtonMenu bg='#717b8f' 
-                    iconActive={displayBlouses ? true : false} src={camisasIcon} 
+                <ButtonMenu  bg={ThemeStyle.bgTheme}  
+                    iconActive={displayBlouses } src={camisasIcon} 
                     marginhorizontal='10' 
                     marginvertical='10'  
                     onClick={actionDisplayBlouses} 
                     radius={true}
                     text='Blusas'
                 />
-                <ButtonMenu bg='#717b8f' 
-                    iconActive={displayShorts ? true : false} src={JeansIcon} 
+                <ButtonMenu  bg={ThemeStyle.bgTheme}  
+                    iconActive={displayShorts } src={JeansIcon} 
                     marginhorizontal='10' 
                     marginvertical='10' 
                     onClick={actionDisplayShorts} 
                     radius={true}
                     text='shorts'
                 />
-                <ButtonMenu bg='#717b8f '
+                <ButtonMenu  bg={ThemeStyle.bgTheme}  
                     iconActive={displayUndewear} src={calcinhaIcon} 
                     marginhorizontal='10' 
                     marginvertical='10' 
@@ -127,10 +131,12 @@ export const Showcase=()=>{
                     radius={true}
                     text='intima'
                 />
-            
             </div>
+            
             <p className="category-title">Produtos: <span>{conditionCategoryTitle()}</span> </p>
-      </>
+     
+      </div>
+          
     </S.CategorySectionProducts>
   
     <S.ShowcaseProduct > 

@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { ThemeStyle } from "../../styled";
+
+
 
 type Props={
     bgColor?:string,
@@ -12,7 +15,7 @@ type Props={
 
 export const ContainerButtonMenu=styled.a<Props>`
    
-    color: #485161;
+    color:${ThemeStyle.bgTheme};
     display: flex;
     flex-direction:column;
     justify-content:center;
@@ -23,11 +26,11 @@ export const ContainerButtonMenu=styled.a<Props>`
     width: 80px;
     text-decoration:none;
     margin: ${props=>props.mv && props.mh ? `${props.mv}px ${props.mh}px` : '10px 20'};
-   border-radius ${props=>props.radiusState === true ? '100%' : 'none'};
-    background:${props=>props.bgColorActive === true ? '#485161' :  props.bgColor };
+    border-radius ${props=>props.radiusState === true ? '100%' : 'none'};
+    background:${props=>props.bgColorActive === true ?  `${ThemeStyle.bgActiveIconMenu}` : props.bgColor  };
     &:hover{
         cursor:pointer;
-        background:${props=>props.bgColorActive === true ? '#d4ae3bc' :  '#485161' };
+        background:${props=>props.bgColorActive === true ? `${props.bgColorActive}`:`${ThemeStyle.bgHoverIcon}`  };
     }
     @media screen and (max-width:950px){
         padding:10px;
@@ -47,7 +50,7 @@ export const ButtonIcon=styled.img`
 
 export const TextButton=styled.span`
    font-size:12px;
-    color:#e8e8e8;
+    color:${ThemeStyle.bgAppSystem};
    
     @media screen and (max-width:920px){
         display: flex;
