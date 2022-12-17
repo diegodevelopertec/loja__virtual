@@ -26,60 +26,66 @@ export const CategorySectionProducts=styled.div`
 justify-content:center;
 margin: 100px 0;
 display:flex;
-    .area{
-      box-shadow:0 0 10px #564061;
-      margin: 20px 0 0 ;
-      font-size:15px;
-      color:white;
-      height:250px;
-      font-weight:bold;
-      background:${ThemeStyle.bgTheme};
-      border-radius:15px;
-      width: 90%;
-      flex-direction:column;
-      display: flex;
-      align-items:center;
-      .category-title{
-        padding-top:15px;
-          width: 250px;
-          min-width:150px;
-         display: flex;
-          background: ${ThemeStyle.bgActiveIconMenu};
-          margin-top:30px;
-          padding: 30px ;
-          border-radius:5px;
-          span{
-              margin-left:10px;
-             
+      .area{
+        box-shadow:0 0 10px #564061;
+        margin: 20px 0 0 ;
+        font-size:15px;
+        color:white;
+        height:250px;
+        font-weight:bold;
+        background:${ThemeStyle.bgTheme};
+        border-radius:15px;
+        width: 90%;
+        flex-direction:column;
+        display: flex;
+        align-items:center;
+          .category-title{
+              padding-top:15px;
+              width: 250px;
+              min-width:150px;
+            display: flex;
+              background: ${ThemeStyle.bgActiveIconMenu};
+              margin-top:30px;
+              padding: 30px ;
+              border-radius:5px;
+              span{
+                  margin-left:10px;
+                
+                
+              }
+
+          
+
+          }
+        .cx-btn-icons{
+              display: flex;
+              margin: 20px  0px ;
             
           }
-      }
-    .cx-btn-icons{
-          display: flex;
-          margin: 20px  0px ;
-        
-      }
-      padding: 20px 10px;
+          padding: 20px 10px;
 
-    @media screen and (max-width:950px){
-        text-align:center;
-        .cx-btn-icons{
-            justify-content:center;
-            margin: 0;
-            padding: 10px;
-           
+        @media screen and (max-width:950px){
+            text-align:center;
+            .cx-btn-icons{
+                justify-content:center;
+                margin: 0;
+                padding: 10px;
+              
+                
+                }
             
             }
-         
-        }
-        .category-title{
-          justify-content:center;
-         }
-}
+            .category-title{
+              justify-content:center;
+            }
+            @media screen and (max-width:280px){
+                width: 95%;
+                height: max-content;
+            }
+      }
 
 
-    
-
+   
     
 `
 

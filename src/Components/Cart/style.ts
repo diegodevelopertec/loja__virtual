@@ -17,7 +17,8 @@ export const Container=styled.div<Props>`
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     margin-top:12px;
-    transition:ease all 0.2s;
+    transition:all ease 0.13;
+   
     @media screen and (max-width:920px){
    
          position:${props=>props.displayCart === true ? 'absolute' : 'fixed'};
@@ -45,6 +46,7 @@ export const CartHeader=styled.div<Props>`
   align-items:center;
   font-size:14px;
   padding: 10px 0;
+
   .header--text{
       display: flex;
       justify-content:center;
@@ -73,7 +75,6 @@ export const CartBody=styled.div<Props>`
   flex-direction:column;
   margin: 20px 0;
   height:400px;
-
   @media screen and (max-width:950px){
  
   }

@@ -34,8 +34,14 @@ export const ContainerButtonMenu=styled.a<Props>`
     }
     @media screen and (max-width:950px){
         padding:10px;
-       height:70px;
+        height:70px;
         width: 70px;
+    }
+    @media screen and (max-width:280px){
+        padding:26px;
+        height:50px;
+        width: 50px;
+        font-size:1rem;
     }
 `
 
@@ -43,13 +49,16 @@ export const ButtonIcon=styled.img`
     height: 40px;
     width: 40px;
     @media screen and (max-width:600px){
-     min-height: 23px;
+     min-height: 15px;
+     height:25px;
+     width:23px;
      min-width: 23px;
+   
     }
 `
 
 export const TextButton=styled.span`
-   font-size:12px;
+    font-size:12px;
     color:${ThemeStyle.bgAppSystem};
    
     @media screen and (max-width:920px){

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeStyle } from "../../styled";
 
 export const Container=styled.div`
     display: flex;
@@ -6,7 +7,7 @@ export const Container=styled.div`
     padding:10px 5px;
     font-size:13px;
     width: 100%;
-    border: 1px solid white;
+    border: 2px solid ${ThemeStyle.bgActiveIconMenu};
     border-radius:5px;
     .area--image{
         margin-right:10px;
