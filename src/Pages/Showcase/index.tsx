@@ -29,7 +29,9 @@ export const Showcase=()=>{
     const [displayShorts,setDisplayShorts]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [productCart,setProductCart]=useState([17])
-    const [isLogged,setIsLogged]=useState(false)
+    const [isLogged,setIsLogged]=useState(true)
+
+
    /* useEffect(()=>{
     const loadBurguers=async()=>{
         let dataBurguer=await ApiProduct.getProducts()
@@ -41,7 +43,10 @@ export const Showcase=()=>{
 
 
     const clikedOnModal=()=>setOnModal(true)
-    const closeModal=()=>setOnModal(false)
+    const closeModal=()=>{
+        setIsLogged(false)
+        setOnModal(false)
+    }
 
 
     const actionDisplayBlouses=()=>{
@@ -156,7 +161,7 @@ export const Showcase=()=>{
      </S.ContainerModal>}
      
      {isLogged && <S.ContainerModal>
-        <LoginModal />
+        <LoginModal closeModalClick={closeModal} />
      </S.ContainerModal>}
     
    

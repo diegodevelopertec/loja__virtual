@@ -10,14 +10,12 @@ export const Container=styled.div`
 
     .header-container{
         button{
-            color: ${ThemeStyle.bgTheme};
+            color: ${ThemeStyle.bgAppSystem};
             padding: 7px 20px;
             border-radius:5px;
             border: none;
-            background: ${ThemeStyle.colorTitleCard};
+            background: ${ThemeStyle.bgTheme};
             &:hover{
-                background: ${ThemeStyle.bgTheme};
-                color: ${ThemeStyle.bgAppSystem};
                 border: none;
                 cursor: pointer;
             }
@@ -25,12 +23,15 @@ export const Container=styled.div`
     }
 
 .text{
+    p{
+        text-align:center;
+    }
    .cx-login{
             display: flex;
             justify-content:space-around;
             align-items:center;
             .cx-logo{
-                    display:none;
+                    display:flex;
                     margin:20px 0;
                     justify-content:space-around;
                     align-items:center;
@@ -42,8 +43,8 @@ export const Container=styled.div`
 
                     img{
                     border-radius:100%;
-                        height: 190px;
-                        width: 190px;
+                        height: 160px;
+                        width: 160px;
                         padding: 10px;
                         
                     }
@@ -99,13 +100,19 @@ export const Container=styled.div`
 
 
 @media screen and (max-width:600px){
-    width: 100vw;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    border-radius:0;
-    align-items:center;
-    justify-content:center;
+    position: absolute;
+        top:0;
+        left:0;
+        bottom: 0;
+        right:0;
+        width: 100vw;
+        height: 100vh;
+        flex-direction:column;
+        align-items:center;
+        overflow:none;
+        border-radius:0;
+        margin: 0;
+        justify-content:center;
     *{
         text-align:center;
     }
