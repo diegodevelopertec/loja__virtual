@@ -14,6 +14,7 @@ import { ProductCart } from "../../Components/ProductCart"
 import { ApiProduct } from "../../Api/ApiProducts"
 import { ThemeStyle } from "../../styled"
 import { toast } from "react-toastify"
+import { LoginModal } from "../LoginModal"
 
 export const Showcase=()=>{
     const [blosesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
@@ -28,7 +29,7 @@ export const Showcase=()=>{
     const [displayShorts,setDisplayShorts]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [productCart,setProductCart]=useState([17])
-
+    const [isLogged,setIsLogged]=useState(false)
    /* useEffect(()=>{
     const loadBurguers=async()=>{
         let dataBurguer=await ApiProduct.getProducts()
@@ -154,6 +155,9 @@ export const Showcase=()=>{
         <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      
+     {isLogged && <S.ContainerModal>
+        <LoginModal />
+     </S.ContainerModal>}
     
    
     </S.Container>
