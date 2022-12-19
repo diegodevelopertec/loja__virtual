@@ -7,7 +7,7 @@ type Prop={
     marginvertical:string,
     marginhorizontal:string,
     iconActive:boolean;
-    onClick?:()=>void;
+    onClick?:(e:any)=>void;
     link?:string,
     text?:string,
     radius?:boolean,

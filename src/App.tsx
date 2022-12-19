@@ -5,36 +5,43 @@ import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ButtonMenu } from './Components/ButtonMenu'
-import BurguerImage from '.././src/assets/imgs/burguer.png'
 import UserIcon from '.././src/assets/imgs/user.png'
 import LojaIcon from '.././src/assets/imgs/lojaicon.png'
-import MotoIcon from '.././src/assets/imgs/moto.png'
 import LogoIcon from '.././src/assets/imgs/logo.png'
 import FaceIcon from '.././src/assets/imgs/face.png'
 import InstaIcon from '.././src/assets/imgs/insta.png'
 import TikTokIcon from '.././src/assets/imgs/tiktok.png'
+import ComprasIcon from '.././src/assets/imgs/comprasIcon.png'
+
+import { useNavigate } from 'react-router-dom';
 
 const App=()=>{
   
   const [viewHome,setViewHome]=useState(true)
   const [viewAccount,setViewAccount]=useState(false)
   const [viewDelivery,setViewDelivery]=useState(false)
-  
+  const navigate=useNavigate()
 
-  const ClickViewHome=()=>{
+  const ClickViewHome=(e:any)=>{
+    e.preventDefault()
+    navigate('/')
     setViewHome(true)
     setViewAccount(false)
     setViewDelivery(false)
   
   }
-  const ClickViewDelivery=()=>{
+  const ClickViewDelivery=(e:any)=>{
+    e.preventDefault()
+    navigate('/compras')
     setViewDelivery(true)
     setViewHome(false)
     setViewAccount(false)
    
   }
   
-  const ClickViewAccount=()=>{
+  const ClickViewAccount=(e:any)=>{
+    e.preventDefault()
+    navigate('/account')
     setViewAccount(true)
     setViewHome(false)
     setViewDelivery(false)
@@ -45,24 +52,24 @@ const App=()=>{
             <S.Menu>
              
                    <ButtonMenu link='/'
-                  onClick={()=>ClickViewHome} 
+                  onClick={ClickViewHome} 
                   iconActive={viewHome} 
                   src={LojaIcon}  
                   marginhorizontal='10' 
                   text='inicio'
                   marginvertical='10' />
-              <ButtonMenu link='/pedidos' 
-                  onClick={()=>ClickViewDelivery}  
+              <ButtonMenu link='/compras' 
+                  onClick={ClickViewDelivery}  
                   iconActive={viewDelivery} 
-                  src={MotoIcon} 
+                  src={ComprasIcon} 
                   marginhorizontal='10' 
                   marginvertical='10' 
-                  text='pedidos'/>
+                  text='compras'/>
               <ButtonMenu  
-                 onClick={()=>ClickViewAccount} 
+                 onClick={ClickViewAccount} 
                  iconActive={viewAccount} 
                  src={UserIcon} 
-                 link='/user'
+                 link='/account'
                  marginhorizontal='10' 
                  marginvertical='10'
                  text='conta'/>
