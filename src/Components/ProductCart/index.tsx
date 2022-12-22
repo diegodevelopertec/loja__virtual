@@ -9,18 +9,18 @@ type Props={
 
 
 
-export const ProductCart=()=>{
-    const [qdtProduct,setQdtProduct]=useState(dataBlouses[0].qdt)
-    const [priceProduct,setPriceProduct]=useState(dataBlouses[0].price)
+export const ProductCart=({data}:Props)=>{
+    const [qdtProduct,setQdtProduct]=useState(data.qdt)
+    const [priceProduct,setPriceProduct]=useState(data.price)
 
 
    const  actionsCartCard={
         add:()=>{
-           setPriceProduct(prev=>prev + dataBlouses[0].price)
+           setPriceProduct(prev=>prev + data.price)
            setQdtProduct(qdtProduct +1)
         },
         minus:()=>{
-            setPriceProduct(prev=>prev - dataBlouses[0].price)
+            setPriceProduct(prev=>prev - data.price)
             setQdtProduct(qdtProduct -1)
         }
     }
@@ -32,14 +32,14 @@ export const ProductCart=()=>{
     return <S.Container>
         <div className="area-left">
             <div className='area--image'>
-                <img src={dataBlouses[0].imageDefault} alt="" />
+                <img src={data.imageDefault} alt="" />
             </div>
             <div className="area-text">
                 <span className='name'>
-                    {dataBlouses[0].name}
+                    {data.name}
                 </span>
                 <span className='price'>
-                    R$ {priceProduct.toFixed(2)}
+                    R$ {data.price}
                 </span>
             </div>
         </div>

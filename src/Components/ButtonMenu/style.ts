@@ -39,9 +39,9 @@ export const ContainerButtonMenu=styled.a<Props>`
     }
     @media screen and (max-width:280px){
         padding:26px;
-        height:50px;
-        width: 50px;
-        font-size:1rem;
+        height:30px;
+        width: 30px;
+        font-size:10px;
     }
 `
 
@@ -55,6 +55,12 @@ export const ButtonIcon=styled.img`
      min-width: 23px;
    
     }
+    @media screen and (max-width:280px){
+        padding:26px;
+        height:20px;
+        width: 20px;
+        font-size:10px;
+    }
 `
 
 export const TextButton=styled.span`
@@ -63,5 +69,9 @@ export const TextButton=styled.span`
    
     @media screen and (max-width:920px){
         display: flex;
+    }
+    @media screen and (max-width:280px){
+        font-size:5px;
+        padding: 5px;
     }
 `

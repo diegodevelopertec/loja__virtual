@@ -18,6 +18,7 @@ export const Container=styled.div<Props>`
     border-top-right-radius:5px;
     margin-top:12px;
     transition:all ease 0.13;
+    overflow: none;
    
     @media screen and (max-width:920px){
    
@@ -74,8 +75,61 @@ export const CartBody=styled.div<Props>`
   display:${props=>props.displayCart ? 'flex' : 'none'};
   flex-direction:column;
   margin: 20px 0;
-  height:400px;
-  @media screen and (max-width:950px){
+  height:500px;
+    .area-listproduct{
+      height: 250px;
+      padding: 10px 5px;
+      overflow-y:auto;
+      margin-bottom:12px;
+      ::-webkit-scrollbar{
+        width: 2px;
+      }
+    
+    }
+    .area-address{
+      font-size:13px;
+      height: 80px;
+      background: red;
+      padding: 10px 5px;
+    }
+  .area-final-cupom{
+        flex:1;
+        display: flex;
+        flex-direction:column;
+        padding: 12px 20px;
+          input,button{
+            padding: 12px;
+            border-radius:5px;
+          }
+              button{
+                margin: 12px 0;
+                background: ${ThemeStyle.bgActiveIconMenu};
+                border: none;
+                color: ${ThemeStyle.bgAppSystem};
+                font-size:14px;
+                text-transform:uppercase;
+                  &:hover{
+                    cursor:pointer;
+                    background: green;
+                    
+                  }
+              }
+              .data-item{
+                  font-size:13px;
+                  margin: 5px 0;
+                  display: flex;
+                  justify-content:space-between;
+                }
+  }
+ 
+
+  @media screen and (max-width:600px){
+    height:100vh;
+    .area-listproducts{
+      height: 80vh;
+    }
+  
+  }
  
   }
 `

@@ -15,8 +15,10 @@ import { ApiProduct } from "../../Api/ApiProducts"
 import { ThemeStyle } from "../../styled"
 import { toast } from "react-toastify"
 import { LoginModal } from "../LoginModal"
-
+import { useContext } from "react"
+import { Context } from "../../context/Context"
 export const Showcase=()=>{
+    const {state,dispatch}=useContext(Context)
     const [blosesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
     const [shoesProductList,setShoesProductList]=useState<Product[]>(dataShoes)
     const [shortsProductList,setShortsProductList]=useState<Product[] >(dataShorts)
@@ -28,8 +30,8 @@ export const Showcase=()=>{
     const [displayUndewear ,setDisplayUnderwear]=useState<boolean>(false)
     const [displayShorts,setDisplayShorts]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
-    const [productCart,setProductCart]=useState([17])
-    const [isLogged,setIsLogged]=useState(true)
+    const [productCart,setProductCart]=useState<Product>()
+    const [isLogged,setIsLogged]=useState(false)
 
 
    /* useEffect(()=>{
@@ -80,9 +82,16 @@ export const Showcase=()=>{
         clikedOnModal()
     }
 
-    const setDataBad=()=>{
+    const setDataBad=(data:Product)=>{
+        dispatch({
+            type:'addProductCart',
+            dispatch:{data}
+        })
         toast.success('Produto adicionado  no carrinho')
         closeModal()
+  
+        console.log(state.products);
+        console.log(data);
     }
 
     const conditionCategoryTitle=()=>{
@@ -150,11 +159,7 @@ export const Showcase=()=>{
         { displayShoes ? shoesProductList && shoesProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayShorts ? shortsProductList && shortsProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayUndewear  ?  undewearProductList && undewearProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
-        <Cart >
-          {productCart.map((item,index)=>(
-            <ProductCart key={index} />
-           ))}
-        </Cart>
+        <Cart />
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
         <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>

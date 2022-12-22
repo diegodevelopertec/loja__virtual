@@ -7,7 +7,8 @@ import { Product } from '../../Types/Products';
 type Props={
     funcOffModal:()=>void;
     data:Product,
-    onClick:()=>void,
+    onClick:(data:Product)=>void,
+   
     
 }
 
@@ -16,6 +17,8 @@ export const CardCliked=({funcOffModal,data,onClick}:Props)=>{
     const [qdtProduct,setQdtProduct]=useState(data.qdt)
     const [priceModal,setPriceModal]=useState(data.price)
 
+    
+   const  clikedSetDataCart=()=>onClick(data)
 
 const actionsModal={
     addQdtProduct:()=>{
@@ -69,7 +72,7 @@ const actionsModal={
                </div>
                <div className="cx-buttons">
                     <button className='btn-cancel' onClick={funcOffModal}>voltar</button>
-                    <button className='btn-save' onClick={onClick}>adicionar ao carrinho</button>
+                    <button className='btn-save' onClick={clikedSetDataCart}>adicionar ao carrinho</button>
                </div>
             </div>
 

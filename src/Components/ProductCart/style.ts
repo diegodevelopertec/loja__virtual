@@ -9,6 +9,7 @@ export const Container=styled.div`
     width: 100%;
     border: 2px solid ${ThemeStyle.bgActiveIconMenu};
     border-radius:5px;
+    margin: 8px 0;
     .area--image{
         margin-right:10px;
         img{
