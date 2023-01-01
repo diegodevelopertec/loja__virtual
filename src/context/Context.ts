@@ -8,9 +8,9 @@ import {PurchansingType,initialStatePurchansing,usePurchansingReducer} from './r
 
 
 type ContextTypeState={
-    products:Product[],
+   products:Product[],
    address:AdressType[],
-   purchansing:PurchansingType
+   //purchansing:PurchansingType
  
 }
 type ContextType={
@@ -22,7 +22,7 @@ type ContextType={
 export const initialStateContext={
     products:initialStateProductBad,
     address:initialStateAddress,
-    purchansing:initialStatePurchansing
+    //purchansing:initialStatePurchansing
  
    
 }
@@ -30,7 +30,7 @@ export const initialStateContext={
 export const mainReducer=(state:ContextTypeState,action:ActionTypeGeral)=>({
      products : useProductCartReducer(state.products,action),
     address:useProductAdressReducer(state.address,action),
-    purchansing:usePurchansingReducer(state.purchansing,action)
+    //purchansing:usePurchansingReducer(state.purchansing,action)
     
 })
 

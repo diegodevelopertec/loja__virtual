@@ -5,8 +5,8 @@ import { ActionTypeGeral } from "../../Types/TypeAction"
 
 
 export type PurchansingType={
-    products:Product[] ,
-    address:AdressType[] | [null]
+    products:null | Product[] ,
+    address: null | AdressType[] 
 }
 
 export const initialStatePurchansing={
@@ -26,7 +26,11 @@ export const initialStatePurchansing={
 }
 
 export const usePurchansingReducer=(state:PurchansingType, action:ActionTypeGeral)=>{
-  
+  switch(action.type){
+    case 'add':{
+        return {...state}
+    }
+  }
 
 
 
