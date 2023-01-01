@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import {Context,initialStateContext,mainReducer} from './Context'
+import {Context,initialStateContext,mainReducer} from './context'
 import { ReactNode } from "react";
 
 

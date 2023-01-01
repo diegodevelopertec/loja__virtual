@@ -16,9 +16,9 @@ import { ThemeStyle } from "../../styled"
 import { toast } from "react-toastify"
 import { LoginModal } from "../LoginModal"
 import { useContext } from "react"
-import { Context } from "../../context/Context"
+//import { Context } from "../../context/Context"
 export const Showcase=()=>{
-    const {state,dispatch}=useContext(Context)
+    //const {state,dispatch}=useContext(Context)
     const [blosesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
     const [shoesProductList,setShoesProductList]=useState<Product[]>(dataShoes)
     const [shortsProductList,setShortsProductList]=useState<Product[] >(dataShorts)
@@ -83,15 +83,11 @@ export const Showcase=()=>{
     }
 
     const setDataBad=(data:Product)=>{
-        dispatch({
-            type:'addProductCart',
-            dispatch:{data}
-        })
+      
         toast.success('Produto adicionado  no carrinho')
         closeModal()
   
-        console.log(state.products);
-        console.log(data);
+       
     }
 
     const conditionCategoryTitle=()=>{

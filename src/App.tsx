@@ -12,7 +12,7 @@ import FaceIcon from '.././src/assets/imgs/face.png'
 import InstaIcon from '.././src/assets/imgs/insta.png'
 import TikTokIcon from '.././src/assets/imgs/tiktok.png'
 import ComprasIcon from '.././src/assets/imgs/comprasIcon.png'
-
+import './../src/helpers/msgsYup'
 import { useNavigate } from 'react-router-dom';
 
 const App=()=>{
