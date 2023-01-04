@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
 import { Product } from "../../Types/Products"
@@ -16,9 +17,11 @@ import { ThemeStyle } from "../../styled"
 import { toast } from "react-toastify"
 import { LoginModal } from "../LoginModal"
 import { useContext } from "react"
-//import { Context } from "../../context/Context"
+import { useContextApp } from "../../hooks/useContextApp"
+
 export const Showcase=()=>{
-    //const {state,dispatch}=useContext(Context)
+    const {state,dispatch}=useContextApp()
+    const redirect=useNavigate()
     const [blosesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
     const [shoesProductList,setShoesProductList]=useState<Product[]>(dataShoes)
     const [shortsProductList,setShortsProductList]=useState<Product[] >(dataShorts)
@@ -42,7 +45,7 @@ export const Showcase=()=>{
         setTimeout(()=>loadBurguers(),1000)
     },[burguerProductList])*/
 
-
+ 
 
     const clikedOnModal=()=>setOnModal(true)
     const closeModal=()=>{
@@ -50,7 +53,11 @@ export const Showcase=()=>{
         setOnModal(false)
     }
 
+const returnDataClikedProduct=(data:Product)=>{
+    setDataProductCliked(data)
+    setOnModal(true)
 
+}
     const actionDisplayBlouses=()=>{
         setDisplayShoes(false)
         setDisplayBlouses(true)
@@ -77,18 +84,8 @@ export const Showcase=()=>{
         setDisplayUnderwear(true)
     }
 
-    const returnDataClikedProduct=(data:Product)=>{
-        setDataProductCliked(data)
-        clikedOnModal()
-    }
 
-    const setDataBad=(data:Product)=>{
-      
-        toast.success('Produto adicionado  no carrinho')
-        closeModal()
-  
-       
-    }
+ 
 
     const conditionCategoryTitle=()=>{
         if(displayShoes){
@@ -155,10 +152,12 @@ export const Showcase=()=>{
         { displayShoes ? shoesProductList && shoesProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayShorts ? shortsProductList && shortsProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayUndewear  ?  undewearProductList && undewearProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
-        <Cart />
+        <Cart stateModal={()=>{
+            setIsLogged(true)
+        }} />
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
-        <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
+        <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      
      {isLogged && <S.ContainerModal>

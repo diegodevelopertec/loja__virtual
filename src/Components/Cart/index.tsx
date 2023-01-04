@@ -3,20 +3,22 @@ import cartIcon from '../../assets/imgs/cart.png'
 import  openCartIcon from '../../assets/imgs/setbaixo.png'
 import CloseCartIcon from '../../assets/imgs/close.png'
 import { useContextApp } from '../../hooks/useContextApp'
-
+import { Navigate, useNavigate } from 'react-router-dom'
 import {  ReactNode, useState } from 'react'
 import { ProductCart } from '../ProductCart'
 import { Product } from '../../Types/Products'
 
 type Props={
-   children:ReactNode,
-   data:Product
+    stateModal:()=>void
+
+   
 }
 
-export const Cart=()=>{
+export const Cart=({stateModal}:Props)=>{
     const [displayCart,setDisplayCart]=useState(false)
-    const [notification,setNotification]=useState(true)
+    const [notification,setNotification]=useState(false)
     const {state,dispatch}=useContextApp()
+    const redirect=useNavigate()
 
     const clickDisplayCart=()=>{
        if(!displayCart){
@@ -28,9 +30,20 @@ export const Cart=()=>{
     }
 
 
-    
+    const finalizeCompra=()=>{
+        const user=state.user
+
+         if(user === null){
+          stateModal()
+        }else{
+           redirect('/compras')
+        }
+     
+
+
+
+    }
         
-    
 
 
   
@@ -73,7 +86,7 @@ export const Cart=()=>{
                             <span>R${}</span>
                         </div>
                     </div>
-                <button>finalizar compra</button>
+                <button onClick={finalizeCompra}>finalizar compra</button>
                 </div>
            
            </>  : <div className='error-bad'>Nenhum pedido adicionado ainda </div>

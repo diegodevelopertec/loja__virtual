@@ -142,7 +142,7 @@ export const ContainerData=styled.div`
                     justify-content:center;
                     align-items:center;
                     border: 2px solid transparent;
-                    color: #e6e5e3;
+                    color:#FFFF;
                     border-radius:6px;
                     font-size:13px;
                     height: 50px;
@@ -194,7 +194,7 @@ export const ContainerData=styled.div`
             .price-modal{
                 text-align:center;
                 margin: 20px 0;
-                background: #eee;
+                background-color: #79807b;
                 padding: 12px 5px;
                 border-radius:5px;
                 width:70vw;

@@ -1,24 +1,26 @@
 import * as S from './style'
 import Bg from '../../assets/imgs/bg1.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Product } from '../../Types/Products';
-
+import { useContextApp } from '../../hooks/useContextApp';
 
 type Props={
     funcOffModal:()=>void;
     data:Product,
-    onClick:(data:Product)=>void,
+   
    
     
 }
 
-export const CardCliked=({funcOffModal,data,onClick}:Props)=>{
-
-    const [qdtProduct,setQdtProduct]=useState(data.qdt)
+export const CardCliked=({funcOffModal,data}:Props)=>{
+    const {state,dispatch}=useContextApp()
+    const [qdtProduct,setQdtProduct]=useState(1)
     const [priceModal,setPriceModal]=useState(data.price)
 
-    
-   const  clikedSetDataCart=()=>onClick(data)
+    useEffect(()=>{
+        setQdtProduct(1)
+    },[data])
+   
 
 const actionsModal={
     addQdtProduct:()=>{
@@ -35,7 +37,24 @@ const actionsModal={
 }
 
 
-
+ 
+const  clikedSetDataCart=()=>{
+    let newdata={
+        ...data,
+        qdt:qdtProduct,
+        price:priceModal
+    }
+    dispatch({
+        type:'addProduct',
+        payload:{
+            data:newdata,
+            qdt:newdata.qdt,
+            price:newdata.price
+        }
+    })
+    
+    funcOffModal()
+}
 
 
 

@@ -106,7 +106,7 @@ export const Container=styled.div`
         bottom: 0;
         right:0;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         flex-direction:column;
         align-items:center;
         overflow:none;
@@ -150,6 +150,7 @@ export const Container=styled.div`
         
         
       }
+    }
 
 
 

@@ -1,7 +1,7 @@
-
+import  {v4 as uuid} from 'uuid'
 
 export const dataUnderwear=[
-   { id:1,
+   { id:uuid(),
     name:'Camisa X',
     category:'blusas',
     tamanho:'P',
@@ -12,7 +12,7 @@ export const dataUnderwear=[
     detailsProduct:'',
     qdt:1
     },
-    { id:1,
+    { id:uuid(),
         name:'Camisa X',
         category:'blusas',
         tamanho:'P',
@@ -23,7 +23,7 @@ export const dataUnderwear=[
         detailsProduct:'',
         qdt:1
         },
-        { id:1,
+        { id:uuid(),
             name:'Camisa X',
             category:'blusas',
             tamanho:'P',
@@ -34,7 +34,7 @@ export const dataUnderwear=[
             detailsProduct:'',
             qdt:1
             },
-            { id:1,
+            { id:uuid(),
                 name:'Camisa X',
                 category:'blusas',
                 tamanho:'P',
@@ -45,7 +45,7 @@ export const dataUnderwear=[
                 detailsProduct:'',
                 qdt:1
             },
-            { id:1,
+            { id:uuid(),
                name:'Camisa X',
                category:'blusas',
                tamanho:'P',
@@ -67,7 +67,7 @@ export const dataUnderwear=[
              detailsProduct:'',
              qdt:1
             },
-            { id:1,
+            { id:uuid(),
               name:'Camisa X',
              category:'blusas',
              tamanho:'P',
@@ -77,7 +77,7 @@ export const dataUnderwear=[
              images:'',
              detailsProduct:'',
              qdt:1
-            },  { id:1,
+            },  { id:uuid(),
                 name:'Camisa X',
                 category:'blusas',
                 tamanho:'P',
@@ -99,7 +99,7 @@ export const dataUnderwear=[
                     detailsProduct:'',
                     qdt:1
                     },
-                    { id:1,
+                    {id:uuid(),
                         name:'Camisa X',
                         category:'blusas',
                         tamanho:'P',
@@ -121,7 +121,7 @@ export const dataUnderwear=[
                             detailsProduct:'',
                             qdt:1
                         },
-                        { id:1,
+                        { id:uuid(),
                            name:'Camisa X',
                            category:'blusas',
                            tamanho:'P',
@@ -132,7 +132,7 @@ export const dataUnderwear=[
                            detailsProduct:'',
                            qdt:1
                         },
-                        { id:1,
+                        { id:uuid(),
                           name:'Camisa X',
                           category:'blusas',
                           tamanho:'P',
@@ -143,7 +143,7 @@ export const dataUnderwear=[
                          detailsProduct:'',
                          qdt:1
                         },
-                        { id:1,
+                        { id:uuid(),
                           name:'Camisa X',
                          category:'blusas',
                          tamanho:'P',
@@ -157,7 +157,7 @@ export const dataUnderwear=[
 ]
 
 export const dataShoes=[
-    { id:1,
+    { id:uuid(),
         name:'Camisa X',
         category:'blusas',
         tamanho:'P',
@@ -168,7 +168,7 @@ export const dataShoes=[
         detailsProduct:'',
         qdt:1
         },
-        { id:1,
+        {id:uuid(),
             name:'Camisa X',
             category:'blusas',
             tamanho:'P',
@@ -179,7 +179,7 @@ export const dataShoes=[
             detailsProduct:'',
             qdt:1
             },
-            { id:1,
+            { id:uuid(),
                 name:'Camisa X',
                 category:'blusas',
                 tamanho:'P',
@@ -190,7 +190,7 @@ export const dataShoes=[
                 detailsProduct:'',
                 qdt:1
                 },
-                { id:1,
+                { id:uuid(),
                     name:'Camisa X',
                     category:'blusas',
                     tamanho:'P',
@@ -201,7 +201,7 @@ export const dataShoes=[
                     detailsProduct:'',
                     qdt:1
                 },
-                { id:1,
+                { id:uuid(),
                    name:'Camisa X',
                    category:'blusas',
                    tamanho:'P',
@@ -212,7 +212,7 @@ export const dataShoes=[
                    detailsProduct:'',
                    qdt:1
                 },
-                { id:1,
+                { id:uuid(),
                   name:'Camisa X',
                   category:'blusas',
                   tamanho:'P',
@@ -223,7 +223,7 @@ export const dataShoes=[
                  detailsProduct:'',
                  qdt:1
                 },
-                { id:1,
+                { id:uuid(),
                   name:'Camisa X',
                  category:'blusas',
                  tamanho:'P',
@@ -234,7 +234,7 @@ export const dataShoes=[
                  detailsProduct:'',
                  qdt:1
                 },
-                { id:1,
+                { id:uuid(),
                     name:'Camisa X',
                     category:'blusas',
                     tamanho:'P',
@@ -245,7 +245,7 @@ export const dataShoes=[
                     detailsProduct:'',
                     qdt:1
                     },
-                    { id:1,
+                    { id:uuid(),
                         name:'Camisa X',
                         category:'blusas',
                         tamanho:'P',
@@ -256,7 +256,7 @@ export const dataShoes=[
                         detailsProduct:'',
                         qdt:1
                         },
-                        { id:1,
+                        { id:uuid(),
                             name:'Camisa X',
                             category:'blusas',
                             tamanho:'P',
@@ -267,7 +267,7 @@ export const dataShoes=[
                             detailsProduct:'',
                             qdt:1
                             },
-                            { id:1,
+                            { id:uuid(),
                                 name:'Camisa X',
                                 category:'blusas',
                                 tamanho:'P',
@@ -278,7 +278,7 @@ export const dataShoes=[
                                 detailsProduct:'',
                                 qdt:1
                             },
-                            { id:1,
+                            { id:uuid(),
                                name:'Camisa X',
                                category:'blusas',
                                tamanho:'P',
@@ -289,7 +289,7 @@ export const dataShoes=[
                                detailsProduct:'',
                                qdt:1
                             },
-                            { id:1,
+                            { id:uuid(),
                               name:'Camisa X',
                               category:'blusas',
                               tamanho:'P',

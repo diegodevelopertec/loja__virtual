@@ -1,6 +1,6 @@
 
 export type Product={
-    id:number,
+    id:number | string,
     name:string,
     category:string,
     tamanho: string,
@@ -9,5 +9,5 @@ export type Product={
     imageDefault:string,
     images:[] | string,
     detailsProduct:string,
-    qdt:number
+    qdt:number 
 }

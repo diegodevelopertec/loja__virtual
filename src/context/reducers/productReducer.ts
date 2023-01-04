@@ -1,33 +1,43 @@
+import { Profiler } from "react";
+import { ProductCart } from "../../Components/ProductCart";
 import { Product } from "../../Types/Products";
 import { ActionTypeGeral } from "../../Types/TypeAction";
+import { dataBlouses } from "../../data/Product";
 
 
 
 export const initialStateProductBad=[]
+
 export const useProductCartReducer=(state:Product[],action:ActionTypeGeral)=>{
 
     switch(action.type){
         case 'addProduct':{
-         
-              let products=[...state]
-               let idItem=products.findIndex(item=>item.id === action.payload?.data.id)
-               if(idItem  > -1 ){
-                let newQdt=action.payload?.data.qdt
-                let newPrice=action.payload?.data.price
-                    products[idItem].qdt+=newQdt 
-                    products[idItem].price+=newPrice
-               }else{
-                 products.unshift({...action.payload?.data,qdt:action.payload?.qdt})
-               }
+            /*existe no item na lista?
+                pegar o item
+                alterar o item
+
+            */
+           let products=[...state]
+           let id=action.payload?.data.id
+           let index=products.findIndex(item=>item.id === id)
+           if(index > -1){
+                products[index].qdt+=action.payload?.qdt
+                products[index].price+=action.payload?.price
                 return [...products]
-               
-    
-        }
-        case 'setData':{
-            if(action.payload?.data){
-                return {...action.payload?.data}
+            
+           }else{
+            let newData={
+                ...action.payload?.data,
+                qdt:action.payload?.qdt,
+                price:action.payload?.price
             }
+           
+            products.unshift(newData)
+            
+               return [...products]
         }
+      
+    }
         
 
     }

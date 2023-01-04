@@ -5,12 +5,15 @@ import { Product } from "../Types/Products";
 import { ActionTypeGeral } from "../Types/TypeAction";
 import { AdressType } from "../Types/AdressType";
 import {PurchansingType,initialStatePurchansing,usePurchansingReducer} from './reducers/purchansingReducer'
+import {initialStateUser,userReducer} from './reducers/userReducer'
+import { UserType } from "../Types/userType";
 
 
 type ContextTypeState={
    products:Product[],
    address:AdressType[],
-   //purchansing:PurchansingType
+   purchansing:PurchansingType,
+   user:UserType | null
  
 }
 type ContextType={
@@ -22,7 +25,8 @@ type ContextType={
 export const initialStateContext={
     products:initialStateProductBad,
     address:initialStateAddress,
-    //purchansing:initialStatePurchansing
+    purchansing:initialStatePurchansing,
+    user:initialStateUser
  
    
 }
@@ -30,7 +34,8 @@ export const initialStateContext={
 export const mainReducer=(state:ContextTypeState,action:ActionTypeGeral)=>({
      products : useProductCartReducer(state.products,action),
     address:useProductAdressReducer(state.address,action),
-    //purchansing:usePurchansingReducer(state.purchansing,action)
+    purchansing:usePurchansingReducer(state.purchansing,action),
+    user:userReducer(state.user,action)
     
 })
 
