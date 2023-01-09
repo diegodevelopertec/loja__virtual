@@ -4,15 +4,16 @@ import { useContext } from 'react'
 import { ProductRequest } from '../ProductRequest'
 import { Product } from '../../Types/Products'
 import { useContextApp } from '../../hooks/useContextApp'
-import { Context } from '../../context/context'
+import { PurchasingDataType } from '../../Types/PurchansingType'
 
 type Props={
-    data:Product
+    dataRequests:PurchasingDataType
 }
-export const Requests=({data}:Props)=>{
+export const Requests=({dataRequests}:Props)=>{
     const {state,dispatch}=useContextApp()
     const [openBody,setOnBody]=useState(false)
-
+    let [purchansing]=state.purchansing
+    let address=state.address.find(item=>item.state === true)
 
     const setBodyRequest=()=>{
         !openBody  ? setOnBody(true) : setOnBody(false)
@@ -33,9 +34,9 @@ export const Requests=({data}:Props)=>{
         </S.RequestHeader>
         <S.RequestBody openBody={openBody}>
              <div className="cx-produtos">
-                 { state.purchansing.products  &&   state.purchansing.products.map((item,index)=>(
-                     <ProductRequest data={item} key={index} />)) 
-                 }
+             {purchansing.products.map((item,index)=>(
+                           <ProductRequest data={item} key={index} />
+                ))}
            </div>  
            
         </S.RequestBody>

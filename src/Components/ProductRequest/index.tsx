@@ -1,7 +1,7 @@
 import * as S from './style'
 import { Product } from '../../Types/Products'
 import { useContext, useEffect, useState } from 'react'
-import { Context } from '../../context/context'
+import { useContextApp } from '../../hooks/useContextApp'
 
 
 
@@ -12,7 +12,7 @@ type Props={
 
 
 export const ProductRequest=({data}:Props)=>{
-    const {state,dispatch}=useContext(Context)
+    const {state,dispatch}=useContextApp()
     const [qdtProduct,setQdtProduct]=useState(data.qdt)
     const [priceProduct,setPriceProduct]=useState(data.price)
 

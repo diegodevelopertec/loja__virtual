@@ -10,8 +10,6 @@ import { Product } from '../../Types/Products'
 
 type Props={
     stateModal:()=>void
-
-   
 }
 
 export const Cart=({stateModal}:Props)=>{
