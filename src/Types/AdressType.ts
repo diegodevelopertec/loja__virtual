@@ -1,5 +1,5 @@
 
-export type AdressType={
+export type AddressType={
    id:number,
    rua:string,
    numero:string,

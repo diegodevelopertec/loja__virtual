@@ -8,7 +8,7 @@ import JeansIcon from '../../assets/imgs/jeans.png'
 import sapatoIcon from '../../assets/imgs/sapatoF.png'
 import camisasIcon from '../../assets/imgs/camisasF.png'
 import { ButtonMenu } from "../../Components/ButtonMenu"
-import { CardCliked } from "../../Components/CardProductCliked"
+import { CardClicked } from "../../Components/CardProductCliked"
 import { dataBlouses,dataShoes,dataShorts,dataUnderwear} from '../../data/Product'
 import { Cart } from "../../Components/Cart"
 import { ProductCart } from "../../Components/ProductCart"
@@ -22,30 +22,21 @@ import { useContextApp } from "../../hooks/useContextApp"
 export const Showcase=()=>{
     const {state,dispatch}=useContextApp()
     const redirect=useNavigate()
-    const [blosesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
+    const [blousesProductList,setBlousesProductList]=useState<Product[] >( dataBlouses)
     const [shoesProductList,setShoesProductList]=useState<Product[]>(dataShoes)
     const [shortsProductList,setShortsProductList]=useState<Product[] >(dataShorts)
-    const [undewearProductList,setUnderwear]=useState(dataUnderwear)
+    const [underwearProductList,setUnderwear]=useState(dataUnderwear)
     const [dataProductCliked,setDataProductCliked]=useState<Product | any>()
    
     const [displayBlouses,setDisplayBlouses]=useState<boolean>(true)
     const [displayShoes,setDisplayShoes]=useState<boolean>(false)
-    const [displayUndewear ,setDisplayUnderwear]=useState<boolean>(false)
+    const [displayUnderwear ,setDisplayUnderwear]=useState<boolean>(false)
     const [displayShorts,setDisplayShorts]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [productCart,setProductCart]=useState<Product>()
     const [isLogged,setIsLogged]=useState(false)
 
 
-   /* useEffect(()=>{
-    const loadBurguers=async()=>{
-        let dataBurguer=await ApiProduct.getProducts()
-        await  setBurguerProductList(dataBurguer)
-    }
-        setTimeout(()=>loadBurguers(),1000)
-    },[burguerProductList])*/
-
- 
 
     const clikedOnModal=()=>setOnModal(true)
     const closeModal=()=>{
@@ -132,7 +123,7 @@ const returnDataClikedProduct=(data:Product)=>{
                     text='shorts'
                 />
                 <ButtonMenu  bg={ThemeStyle.bgTheme}  
-                    iconActive={displayUndewear} src={calcinhaIcon} 
+                    iconActive={displayUnderwear} src={calcinhaIcon} 
                     marginhorizontal='10' 
                     marginvertical='10' 
                     onClick={actionDisplayUnderwear} 
@@ -141,23 +132,23 @@ const returnDataClikedProduct=(data:Product)=>{
                 />
             </div>
             
-            <p className="category-title">Produtos: <span>{conditionCategoryTitle()}</span> </p>
+            <p className="category-title">Produtos:<span>{conditionCategoryTitle()}</span> </p>
      
       </div>
           
     </S.CategorySectionProducts>
   
     <S.ShowcaseProduct > 
-        { displayBlouses ? blosesProductList && blosesProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct} data={item} />) : null}
+        { displayBlouses ? blousesProductList && blousesProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct} data={item} />) : null}
         { displayShoes ? shoesProductList && shoesProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayShorts ? shortsProductList && shortsProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
-        { displayUndewear  ?  undewearProductList && undewearProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
+        { displayUnderwear  ?  underwearProductList && underwearProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         <Cart stateModal={()=>{
             setIsLogged(true)
         }} />
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
-        <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
+        <CardClicked   data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      
      {isLogged && <S.ContainerModal>

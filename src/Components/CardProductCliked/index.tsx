@@ -1,8 +1,9 @@
 import * as S from './style'
-import Bg from '../../assets/imgs/bg1.png'
+import Bg from '../../assets/ims/bg1.png'
 import { useEffect, useState } from 'react'
 import { Product } from '../../Types/Products';
 import { useContextApp } from '../../hooks/useContextApp';
+import { toast } from 'react-toastify';
 
 type Props={
     funcOffModal:()=>void;
@@ -12,25 +13,21 @@ type Props={
     
 }
 
-export const CardCliked=({funcOffModal,data}:Props)=>{
+export const CardClicked=({funcOffModal,data}:Props)=>{
     const {state,dispatch}=useContextApp()
     const [qdtProduct,setQdtProduct]=useState(1)
     const [priceModal,setPriceModal]=useState(data.price)
 
-    useEffect(()=>{
-        setQdtProduct(1)
-    },[data])
    
 
 const actionsModal={
     addQdtProduct:()=>{
-        setQdtProduct(prev=>prev+1) 
-        setPriceModal(priceActual=>priceActual + data.price)  
-    }
-    ,
+        setQdtProduct(prev=>prev + 1) 
+        setPriceModal(data.price + priceModal) 
+    } ,
     minusQdtProduct:()=>{
         if(qdtProduct > 1){
-            setQdtProduct(prev=>prev-1)  
+           setQdtProduct(prev=>prev-1)  
            setPriceModal(priceActual=>priceActual - data.price) 
         }
     }
@@ -39,21 +36,31 @@ const actionsModal={
 
  
 const  clikedSetDataCart=()=>{
-    let newdata={
-        ...data,
-        qdt:qdtProduct,
-        price:priceModal
+    const newProduct = {
+        id: data.id,
+        name: data.name,
+        category: data.category,
+        tamanho: data.tamanho,
+        numero: data.numero,
+        price: priceModal,
+        imageDefault:data.imageDefault,
+        images: [] ,
+        detailsProduct: data.detailsProduct,
+        qdt:qdtProduct
+        
     }
+    
     dispatch({
         type:'addProduct',
         payload:{
-            data:newdata,
-            qdt:newdata.qdt,
-            price:newdata.price
+           data: newProduct
         }
     })
-    
-    funcOffModal()
+  
+   
+  
+     funcOffModal()
+     toast.success(`você adicionou novo produto no carrinho`)
 }
 
 

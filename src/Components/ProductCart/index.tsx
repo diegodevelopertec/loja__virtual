@@ -1,7 +1,8 @@
 import * as S from './style'
 import { dataBlouses} from '../../data/Product'
 import { Product } from '../../Types/Products'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+import { useContextApp } from '../../hooks/useContextApp'
 
 type Props={
     data:Product
@@ -12,7 +13,13 @@ type Props={
 export const ProductCart=({data}:Props)=>{
     const [qdtProduct,setQdtProduct]=useState(data.qdt)
     const [priceProduct,setPriceProduct]=useState(data.price)
+    const {state,dispatch}=useContextApp()
 
+    
+    useEffect(()=>{
+        setQdtProduct(data.qdt)
+        setPriceProduct(data.price)
+},[state.products])
 
    const  actionsCartCard={
         add:()=>{

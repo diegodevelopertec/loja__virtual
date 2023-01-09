@@ -56,7 +56,7 @@ export const dataUnderwear=[
                detailsProduct:'',
                qdt:1
             },
-            { id:1,
+            { id:uuid(),
               name:'Camisa X',
               category:'blusas',
               tamanho:'P',
@@ -88,7 +88,7 @@ export const dataUnderwear=[
                 detailsProduct:'',
                 qdt:1
                 },
-                { id:1,
+                { id:uuid(),
                     name:'Camisa X',
                     category:'blusas',
                     tamanho:'P',

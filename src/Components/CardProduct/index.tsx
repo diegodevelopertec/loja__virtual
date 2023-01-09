@@ -9,6 +9,8 @@ type Props={
 }
 export const CardProduct=({data,clikedStartModal,onClick}:Props)=>{
 
+
+    
 const ClikeData=()=>onClick(data)
    
     return <S.Container >

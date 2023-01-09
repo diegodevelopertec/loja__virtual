@@ -15,11 +15,7 @@ export const DeliveryPage=()=>{
           </div>
           <div className="requests-container">
         
-              {
-                state.purchansing.products.map((item,index)=>(
-                 <Requests data={item} key={index} /> 
-              ))
-           }
+            
           </div>
 
 

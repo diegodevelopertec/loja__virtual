@@ -4,6 +4,8 @@ import LojaIcon from '../../assets/imgs/logo.png'
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
+import { useContextApp } from '../../hooks/useContextApp';
+import { useUserData } from '../../hooks/userUserData';
 
 type InputTypes={
     email:string,
@@ -16,6 +18,11 @@ type Props={
 
 
 export const LoginModal=({closeModalClick}:Props)=>{
+
+  
+    const {userData,dispatch}=useUserData()
+
+  
 
     const schema=yup.object({
         email:yup.string().email().required(),
@@ -31,10 +38,22 @@ export const LoginModal=({closeModalClick}:Props)=>{
     
     const submitForm=(data:InputTypes)=>{
         console.log(data);
-        
+        dispatch({
+            type:'loginApp',
+           payload:{
+            data,
+            email:data.email,
+            password:data.password
+           }
+        })
+        closeModalClick()
     }
      
-    return <S.Container>
+
+
+    
+
+    return <S.Container  >
         <div className="text">
            <div className='header-container'>
                 <button onClick={closeModalClick}>voltar</button>
@@ -55,7 +74,7 @@ export const LoginModal=({closeModalClick}:Props)=>{
                     <p className='erros-form' >{errors.password?.message}</p>
                 </div>
                 <div>
-                    <input type="submit" value={'Entrar'}/>
+                    <input type="submit"  value={'Entrar'}/>
                 </div>
                 <div className='create-account'>
                     <p>Não tenho uma conta?<Link to='/register'>clique aqui</Link></p>

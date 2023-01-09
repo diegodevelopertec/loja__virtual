@@ -4,7 +4,7 @@ import  openCartIcon from '../../assets/imgs/setbaixo.png'
 import CloseCartIcon from '../../assets/imgs/close.png'
 import { useContextApp } from '../../hooks/useContextApp'
 import { Navigate, useNavigate } from 'react-router-dom'
-import {  ReactNode, useState } from 'react'
+import {  ReactNode, useState,useEffect } from 'react'
 import { ProductCart } from '../ProductCart'
 import { Product } from '../../Types/Products'
 
@@ -18,7 +18,16 @@ export const Cart=({stateModal}:Props)=>{
     const [displayCart,setDisplayCart]=useState(false)
     const [notification,setNotification]=useState(false)
     const {state,dispatch}=useContextApp()
+    const [total,setTotalValues]=useState(0)
+    const [products,setProducts]=useState(state.products)
     const redirect=useNavigate()
+
+    
+    useEffect(()=>{
+        setProducts(state.products)
+        let total=state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 )  
+        setTotalValues(total)
+    },[state.products])
 
     const clickDisplayCart=()=>{
        if(!displayCart){
@@ -30,14 +39,12 @@ export const Cart=({stateModal}:Props)=>{
     }
 
 
-    const finalizeCompra=()=>{
-        const user=state.user
-
-         if(user === null){
-          stateModal()
-        }else{
+    const setDatatoCart=()=>{
+        //const user=state.user
+       
+        
            redirect('/compras')
-        }
+        
      
 
 
@@ -86,7 +93,7 @@ export const Cart=({stateModal}:Props)=>{
                             <span>R${}</span>
                         </div>
                     </div>
-                <button onClick={finalizeCompra}>finalizar compra</button>
+                <button onClick={setDatatoCart}>finalizar compra</button>
                 </div>
            
            </>  : <div className='error-bad'>Nenhum pedido adicionado ainda </div>

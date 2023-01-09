@@ -20,9 +20,23 @@ export const userReducer=(state:UserType | null  ,action:ActionTypeGeral)=>{
                 address:action.payload?.address
 
             }
-
+            return dataUser
         }
-        return dataUser
+        case 'loginApp':{
+            let dataState={...state}
+            let email=action.payload?.email
+            let password=action.payload?.password
+            //let token=localStorage.getItem('token')
+            if(email === dataState.email && password === dataState.password){
+                return true
+            }else{
+                'usuário não existe'
+                return false
+            }
+           
+        }
+       
+       
        
     }
 
